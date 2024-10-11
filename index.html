@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="./public/style.css" rel="stylesheet">
+</head>
+<body class="h-full w-full container bg-[#c4c4c4] dark:bg-[#371414] dark:text-white">
+
+    <main class="relative">
+
+        <!-- navigation bar -->
+        <nav class="bg-[#9e1f1f] shadow-lg h-auto w-full fixed top-0">
+            <ul class="flex justify-center items-center">
+                <a href="#home" class="nav-link" data-target="home">
+                    <li>Home</li>
+                </a>
+                <a href="#about-me" class="nav-link" data-target="about-me">
+                    <li>About Me</li>
+                </a>
+                <a href="#favorites-projects" class="nav-link" data-target="favorites-projects">
+                    <li>Favorites / Projects</li>
+                </a>
+                <a href="#my-talents" class="nav-link" data-target="my-talents">
+                    <li>My Talents</li>
+                </a>
+                <a href="#html-activities" class="nav-link" data-target="html-activities">
+                    <li>HTML Activities</li>
+                </a>
+            </ul>
+        </nav>
+
+        <section id="home" class="pt-32 px-40 h-screen">
+            <p>Home</p>
+        </section>
+
+        <section id="about-me" class="px-40 h-screen pt-32">
+            <p>About me</p>
+        </section>
+        
+        <section id="favorites-projects" class="px-40 h-screen pt-32">
+            <p>Favorites</p>
+        </section>
+
+        <section id="my-talents" class="px-40 h-screen pt-32">
+            <p>My Talents</p>
+        </section>
+
+        <section id="html-activities" class="px-40 h-screen pt-32">
+            <p>HTML Activities</p>
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript for active nav-link handling -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            // Function to remove active class from all links and apply it to the clicked link
+            function setActiveLink(link) {
+                navLinks.forEach(nav => nav.classList.remove("nav-link-active"));
+                link.classList.add("nav-link-active");
+            }
+
+            // Click event listener for each nav link
+            navLinks.forEach(link => {
+                link.addEventListener("click", function () {
+                    setActiveLink(this); // Set the clicked link as active
+                });
+            });
+
+            // Intersection Observer to detect scrolling into a section
+            const options = {
+                root: null,
+                threshold: 0.6, // When 60% of the section is visible
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    const id = entry.target.getAttribute("id");
+                    const navLink = document.querySelector(`a[href="#${id}"]`);
+
+                    if (entry.isIntersecting) {
+                        // Set the corresponding link as active when the section is in view
+                        setActiveLink(navLink);
+                    }
+                });
+            }, options);
+
+            // Observe each section for intersection with the viewport
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
