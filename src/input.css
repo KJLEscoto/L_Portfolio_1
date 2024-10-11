@@ -9,25 +9,50 @@ html {
 /* Custom animation for sliding border from left to right */
 @layer components {
     .nav-link {
-        @apply border-b-4 dark:border-[#9e1f1f] py-3 px-5 relative overflow-hidden dark:text-[#261717];
+        @apply border-b-4 dark:border-[#9e1f1f] border-gray-100 py-3 px-5 relative overflow-hidden dark:text-black text-gray-400;
     }
 
     .nav-link:hover {
-        @apply text-white;
-    }
-
-    .nav-link:hover::after {
-        @apply w-full;
-        /* On hover, the width expands to full */
+        @apply dark:text-white text-[#d62d2d];
     }
 
     .nav-link-active {
-        @apply border-b-4 dark:border-white relative dark:text-white;
+        @apply border-b-4 dark:border-white border-[#d62d2d] relative dark:text-white text-[#d62d2d];
+    }
 
-        /* Make sure the active link has a visible border */
+    .nav-link-mobile {
+        @apply py-3 px-5 w-full bg-gray-100 text-gray-400 rounded-full; 
+    }
+
+    .nav-link-mobile-active {
+        @apply bg-[#9e1f1f] text-white;
+    }
+
+    .nav-link-mobile:hover {
+        @apply bg-gray-300 text-white;
     }
 
     section:nth-child(odd) {
-        @apply bg-[#461818]
+        @apply dark:bg-[#461818] bg-gray-200;
+    }
+
+    .headline {
+        @apply text-[#d62d2d] md:text-4xl text-3xl font-normal cursor-default flex gap-2 items-center;
+    }
+
+    p {
+        @apply tracking-wider md:text-lg text-base;
+    }
+
+    .frame {
+        @apply border-4 border-[#d62d2d] dark:border-white shadow;
+    }
+
+    .icon {
+        @apply md:w-10 w-8 h-auto
+    }
+
+    .list {
+        @apply list-inside flex flex-col gap-1 pl-10 text-lg -mt-5;
     }
 }
