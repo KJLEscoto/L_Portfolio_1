@@ -2,10 +2,10 @@
 
 ## Install modules
 ```bash
-    npm install
+npm install
 ```
 
 ## Run the server
 ```bash
-    npm run dev
+npm run dev
 ```
