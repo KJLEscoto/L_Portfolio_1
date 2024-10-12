@@ -6,12 +6,13 @@
     <title>My Portfolio</title>
     <link href="./public/style.css" rel="stylesheet">
 </head>
+
 <body class="h-full w-full bg-gray-300 dark:bg-[#371414] dark:text-white text-black transition-all duration-500 ease-in">
 
     <main class="relative">
 
         <!-- nav menu desktop -->
-        <nav class="dark:bg-[#9e1f1f] bg-gray-100 shadow-lg h-auto w-full fixed top-0 z-50 hidden md:block">
+        <nav class="nav-fixed hidden md:block">
             <ul class="flex justify-center items-center">
                 <a href="#home" class="nav-link" data-target="home">
                     <li>Home</li>
@@ -32,7 +33,7 @@
         </nav>
 
         <!-- nav menu mobile -->
-        <nav class="h-auto w-full dark:bg-[#9e1f1f] bg-gray-100 shadow-lg fixed top-0 z-50 flex md:hidden">
+        <nav class="nav-fixed flex md:hidden">
             <div class="p-4 w-full">
 
                 <!-- menu icon -->
@@ -41,12 +42,12 @@
                 </svg>
 
                 <!-- close icon -->
-                <svg id="close" class="hidden icon cursor-pointer text-[#a47373] hover:text-[#d62d2d]" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <svg id="close" class="hidden icon cursor-pointer text-[#a47373] dark:text-white hover:text-[#d62d2d]" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
                 </svg>        
                 
                 <!-- menu list -->
-                <ul id="menu-list" class="hidden flex-col gap-2 w-full justify-start items-start">
+                <ul id="menu-list" class="hidden flex-col gap-2 w-full justify-start items-start mt-5">
                     <a href="#home" class="nav-link-mobile" data-target="home">
                         <li>Home</li>
                     </a>
@@ -67,8 +68,8 @@
         </nav>
 
         <!-- Home -->
-        <section id="home" class="lg:pt-28 pt-36 md:px-20 px-10 h-screen flex flex-col-reverse lg:flex-row justify-between gap-5 border">
-            <div class="lg:my-[150px] my-auto mx-auto flex flex-col gap-1">
+        <section id="home" class="section-container flex flex-col-reverse lg:flex-row justify-between gap-5">
+            <div class="lg:my-[150px] mx-auto flex flex-col gap-1 cursor-default">
                 <h2 class="font-base md:text-6xl text-4xl">Hi!</h2>
                 <h1 class="font-medium md:text-7xl text-5xl">I'm <span class="text-[#d62d2d] font-bold">Leah Lamorin</span>,</h1>
                 <p class="text-xl">BSCS Student. <span class="text-[#d62d2d] font-bold">My Portfolio.</span></p>
@@ -102,7 +103,7 @@
         </section>
 
         <!-- About me -->
-        <section id="about-me" class="lg:px-40 md:px-20 px-10 mx-auto h-auto pt-28 flex flex-col gap-5">
+        <section id="about-me" class="section-container flex flex-col gap-5">
 
             <div class="headline">
 
@@ -118,7 +119,7 @@
             <p>In my first year of college, I was a part of the GDSC, which helped me reach various activities and programs that opened our minds to communicating and helped me adopt new learning and skills that I could practice and master.</p>
 
             <!-- images -->
-            <div class="relative flex items-center h-[450px] gap-5 mb-20">
+            <div class="relative flex items-center h-[450px] gap-5 mb-20 md:mt-0 mt-5">
                 <img class="h-auto md:w-1/2 w-full frame z-0" src="./public/img/gdsc_1.png">
                 <div class="z-20">
                     <img class="h-auto md:w-[280px] w-[180px] absolute top-0 md:left-auto left-0 frame" src="./public/img/gdsc_2.jpg">
@@ -127,7 +128,7 @@
             </div>
         </section>
         
-        <section id="favorites-projects" class="px-40 h-screen pt-28 flex flex-col gap-10">
+        <section id="favorites-projects" class="section-container flex flex-col gap-10">
 
             <div class="headline">
 
@@ -163,7 +164,7 @@
             </ul>
         </section>
 
-        <section id="my-talents" class="px-40 h-screen pt-28 flex flex-col gap-5">
+        <section id="my-talents" class="section-container flex flex-col gap-5">
             <div class="headline">
 
                 <!-- star icon -->
@@ -178,7 +179,7 @@
             <p>Also, My favorite sport is volleyball since it's an ideal means to have fun and stay active. It's a fun activity to play since it requires working together, communicating, and strategy.</p>
         </section>
 
-        <section id="html-activities" class="px-40 h-screen pt-28 flex flex-col gap-10">
+        <section id="html-activities" class="section-container flex flex-col gap-10">
             <div class="headline">
 
                 <!-- code icon -->
@@ -190,7 +191,7 @@
             </div>
 
             <div>
-                <a class="px-5 py-2 bg-[#d62d2d] rounded hover:bg-[#7f2b2b] text-white shadow-inner" href="fashion-blog.html">Fashion Blog</a>
+                <a class="btn" href="fashion-blog.html">Fashion Blog</a>
             </div>
 
         </section>
